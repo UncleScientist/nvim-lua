@@ -1,0 +1,20 @@
+    -- In your LSP configuration file (e.g., ~/.config/nvim/lua/lsp_config.lua)
+    local lspconfig = require('lspconfig')
+    local on_attach = function(client, bufnr)
+      -- Your on_attach function for keybindings, etc.
+      -- For example:
+      -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr })
+    end
+
+    lspconfig.rust_analyzer.setup({
+      on_attach = on_attach,
+      settings = {
+        ['rust-analyzer'] = {
+          checkOnSave = {
+            command = "clippy", -- Optional: Use clippy for checks on save
+          },
+          -- Add other rust-analyzer specific settings here
+        }
+      }
+    })
+

@@ -20,13 +20,15 @@ function CompileSomeRust()
                 error_count = error_count + 1
             end
             if collect_err then
-                table.insert(qf_list, i)
+                table.insert(new_qf_list, i)
             end
         end
+        vim.fn.setqflist(new_qf_list, 'r')
     end
 
+
     if error_count > 0 then
-        if tabpagewinnr(tabpgagenr(), '$') > 1 then
+        if vim.fn.tabpagewinnr(vim.fn.tabpagenr(), '$') > 1 then
             vim.cmd('botright copen 6')
         else
             vim.cmd('copen 6')

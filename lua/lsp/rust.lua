@@ -1,5 +1,8 @@
 local opts = { noremap=true, silent=true }
 
+-- This function is adapted from Togglebit's vimscript
+-- version, found at https://github.com/togglebyte/togglerust/blob/main/ftplugin/rust.vim
+-- and rewritten in lua
 function CompileSomeRust()
     print("cargo check...")
     vim.cmd("silent make! check")

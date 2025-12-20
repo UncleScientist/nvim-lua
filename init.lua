@@ -1,13 +1,6 @@
 require("config.lazy")
-require('mason').setup()
-require("lsp.rust")
 
 vim.cmd("colorscheme habamax")
-require('nvim-treesitter.configs').setup {
-  highlight = {
-    enable = true, -- Enable syntax highlighting
-  },
-}
 
 vim.diagnostic.config({
     virtual_text = true,

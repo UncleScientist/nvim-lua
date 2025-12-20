@@ -1,0 +1,14 @@
+return {
+    {
+        "junegunn/fzf",
+        build = "./install --bin",
+    },
+    {
+        "junegunn/fzf.vim",
+        dependencies = { "junegunn/fzf" },
+        cmd = { "Files", "Rg", "Buffers" },
+        keys = {
+            { "<C-p>", "<cmd>Files<CR>", desc = "FZF Files" },
+        },
+    },
+}

@@ -78,7 +78,20 @@ vim.lsp.config("rust-analyzer", {
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>r', '<cmd>:wa<CR>:Cargo run<CR>', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>t', '<cmd>:wa<CR>:Cargo test<CR>', opts)
 
-        vim.g.rustfmt_autosave = 1
+        -- vim.g.rustfmt_autosave = 1
     end,
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.rs",
+  callback = function()
+    local ls_ok, ls = pcall(require, "luasnip")
+    if ls_ok and ls.in_snippet() then
+      return
+    end
+
+    vim.lsp.buf.format({ async = false })
+  end,
+})
+
 vim.lsp.enable("rust-analyzer")

@@ -33,7 +33,7 @@ return {
             "    }",
             "}",
             "",
-            "impl Runner for Aoc20"
+            "impl Runner for Aoc20",
         }),
         rep(1),
         t("_"),
@@ -41,7 +41,7 @@ return {
         t({
             " {",
             "    fn name(&self) -> (usize, usize) {",
-            "        (20"
+            "        (20",
         }),
         rep(1),
         t(", "),
@@ -56,13 +56,13 @@ return {
             "    fn parse(&mut self) {}",
             "",
             "    fn part1(&mut self) -> Vec<String> {",
-            "        aoclib::output(\"unsolved\")",
+            '        aoclib::output("unsolved")',
             "    }",
-            "", 
+            "",
             "    fn part2(&mut self) -> Vec<String> {",
-            "        aoclib::output(\"unsolved\")",
+            '        aoclib::output("unsolved")',
             "    }",
-            "}"
+            "}",
         }),
     }),
 }

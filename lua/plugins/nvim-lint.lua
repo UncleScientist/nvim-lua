@@ -1,23 +1,20 @@
 return {
-  "mfussenegger/nvim-lint",
-  event = { "BufReadPost", "BufNewFile" },
-  config = function()
-    local lint = require("lint")
+    "mfussenegger/nvim-lint",
+    event = { "BufReadPost", "BufNewFile" },
+    config = function()
+        local lint = require("lint")
 
-    lint.linters_by_ft = {
-      python = { "pylint" },
-    }
+        lint.linters_by_ft = {
+            python = { "pylint" },
+        }
 
-    -- Optional: ensure Mason-installed pylint is used
-    lint.linters.pylint.cmd = "pylint"
+        -- Optional: ensure Mason-installed pylint is used
+        lint.linters.pylint.cmd = "pylint"
 
-    vim.api.nvim_create_autocmd(
-      { "BufWritePost", "InsertLeave" },
-      {
-        callback = function()
-          lint.try_lint()
-        end,
-      }
-    )
-  end,
+        vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
+            callback = function()
+                lint.try_lint()
+            end,
+        })
+    end,
 }

@@ -1,15 +1,19 @@
 require("config.lazy")
 
+-- I like habamax, but with a black background
 vim.cmd("colorscheme habamax")
-
-vim.diagnostic.config({
-    virtual_text = true,
-})
-
 vim.api.nvim_set_hl(0, "Normal", { bg = "Black" })
+
+-- Make the relative line numbers darker so that the
+-- current line number stands out
 vim.api.nvim_set_hl(0, "LineNr", { fg = "Cyan" })
 vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#666666" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#666666" })
+
+-- Errors show up directly in the editor
+vim.diagnostic.config({
+    virtual_text = true,
+})
 
 vim.o.tabstop = 4
 vim.o.expandtab = true
@@ -19,7 +23,6 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.smartindent = true
 vim.o.ruler = true
-vim.o.signcolumn = "number"
 vim.o.relativenumber = true
 vim.o.number = true
 vim.o.clipboard = "unnamedplus"
@@ -28,3 +31,8 @@ vim.o.colorcolumn = "100"
 vim.o.guicursor = ""
 vim.o.splitright = true
 vim.o.splitbelow = true
+
+-- Make sure the display doesn't shift left & right when
+-- errors appear and are fixed. Why this isn't the default
+-- is puzzling.
+vim.o.signcolumn = "number"

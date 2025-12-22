@@ -79,6 +79,9 @@ vim.lsp.config("rust-analyzer", {
         vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>r", "<cmd>:wa<CR>:Cargo run<CR>", opts)
         vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>t", "<cmd>:wa<CR>:Cargo test<CR>", opts)
 
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>tn", "<cmd>:TestNearest<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>tf", "<cmd>:TestFile<CR>", opts)
+
         -- vim.g.rustfmt_autosave = 1
     end,
 })

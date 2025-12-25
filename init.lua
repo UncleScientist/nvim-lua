@@ -15,6 +15,9 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
+vim.o.wildmenu = true
+vim.o.wildmode = full
+vim.o.completeopt = "menu,preview"
 vim.o.tabstop = 4
 vim.o.expandtab = true
 vim.o.shiftwidth = 4

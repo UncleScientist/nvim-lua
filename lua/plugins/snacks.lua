@@ -20,7 +20,7 @@ return {
         {
             "<space>o",
             function()
-                Snacks.explorer()
+                Snacks.picker.smart()
             end,
             desc = "File explorer",
         },

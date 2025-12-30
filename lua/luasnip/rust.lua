@@ -77,4 +77,22 @@ return {
     s("testmod", { t({ "#[cfg(test)]", "mod test {", "    use super::*;", "", "    " }), i(0), t({ "", "}" }) }),
     s("test", { t({ "#[test]", "fn " }), i(0), t({ "() {", "    assert_eq!(expected, actual);", "}" }) }),
     s("dd", { t("#[derive("), i(0), t(")]") }),
+    s("ds", {
+        t("#[derive("),
+        i(1),
+        t({ ")]", "struct " }),
+        i(2),
+        t({ " {", "    " }),
+        i(0),
+        t({ "", "}" }),
+    }),
+    s("de", {
+        t("#[derive("),
+        i(1),
+        t({ ")]", "enum " }),
+        i(2),
+        t({ " {", "    " }),
+        i(0),
+        t({ "", "}" }),
+    }),
 }

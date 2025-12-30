@@ -95,4 +95,21 @@ return {
         i(0),
         t({ "", "}" }),
     }),
+    s("fromstr", {
+        t("impl FromStr for "),
+        i(1),
+        t({
+            " {",
+            "    type Err = Infallible;",
+            "",
+            "    fn from_str(line: &str) -> Result<Self, Self::Err> {",
+            "        ",
+        }),
+        i(0),
+        t({
+            "",
+            "    }",
+            "}",
+        }),
+    }),
 }

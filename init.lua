@@ -10,6 +10,21 @@ vim.api.nvim_set_hl(0, "LineNr", { fg = "Cyan" })
 vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#666666" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#666666" })
 
+vim.keymap.set("n", "<space>ch", function()
+    vim.cmd("colorscheme habamax")
+    vim.api.nvim_set_hl(0, "Normal", { bg = "Black" })
+    vim.api.nvim_set_hl(0, "LineNr", { fg = "Cyan" })
+    vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#666666" })
+    vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#666666" })
+end)
+vim.keymap.set("n", "<space>cm", function()
+    vim.cmd("colorscheme murphy")
+    vim.api.nvim_set_hl(0, "LineNr", { fg = "Cyan" })
+    vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#666666" })
+    vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#666666" })
+end)
+--        vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+
 -- Errors show up directly in the editor
 vim.diagnostic.config({
     virtual_text = true,
